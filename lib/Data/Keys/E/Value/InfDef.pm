@@ -53,8 +53,8 @@ around 'get' => sub {
 	my $key   = shift;
 
 	my $value = $self->$get($key);
-	return if not defined $value;
-	return $self->inflate->($value);
+	return undef if not defined $value;
+	return $self->inflate->($value, $self, $key);
 };
 
 around 'set' => sub {
@@ -66,7 +66,7 @@ around 'set' => sub {
     # if value is undef, remove the file
     return $self->$set($key)
 		if (not defined $value);
-	return $self->$set($key, $self->deflate->($value));
+	return $self->$set($key, $self->deflate->($value, $self, $key));
 };
 
 1;

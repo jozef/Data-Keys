@@ -45,7 +45,7 @@ around 'set' => sub {
     my $key   = shift;
     my $value = shift;
     
-    $key = $self->key_adapt->($key);
+    $key = $self->key_adapt->($key, $value);
     $self->$set($key, $value);
     return $key;
 };
