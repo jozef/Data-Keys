@@ -29,6 +29,10 @@ around 'set' => sub {
 	
 	$self->lock_ex($key);
 
+	# pass through in case of delete
+	$self->$set($key, undef)
+		if not defined $value;
+	
 	die '"'.$key.'" already exists'
 		if $self->get($key);
 	
