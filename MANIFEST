@@ -6,6 +6,7 @@ lib/Data/Keys/E/Dir/Lock.pm
 lib/Data/Keys/E/Dir/LockInPlace.pm
 lib/Data/Keys/E/Key/Adapt.pm
 lib/Data/Keys/E/Key/Auto.pm
+lib/Data/Keys/E/Key/AutoLock.pm
 lib/Data/Keys/E/Locking.pm
 lib/Data/Keys/E/Store/Dir.pm
 lib/Data/Keys/E/Store/Mem.pm
@@ -23,6 +24,7 @@ t/03_Data-Keys_locking_inplace.t
 t/04_Data-Keys_uniqset.t
 t/05_Data-Keys_autofolders.t
 t/06_Data-Keys_autokey_keyadapt.t
+t/07_Data-Keys_autolock.t
 t/distribution.t
 t/fixme.t
 t/pod-coverage.t
