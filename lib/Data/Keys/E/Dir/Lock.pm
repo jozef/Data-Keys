@@ -13,7 +13,7 @@ Places file locks in a different folder.
 use warnings;
 use strict;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 our $MAX_NUMBER_OF_LOCK_RETRIES = 10;
 

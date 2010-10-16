@@ -22,7 +22,7 @@ Store values into a folder. Keys are the file names.
 use warnings;
 use strict;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 use Moose::Role;
 

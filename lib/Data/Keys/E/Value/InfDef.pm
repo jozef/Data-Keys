@@ -26,7 +26,7 @@ Uses callback to automatically inflate and deflate.
 use warnings;
 use strict;
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 use Moose::Role;
 
