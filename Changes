@@ -1,4 +1,8 @@
-Revision history for Tree-Store
+Revision history for Data::Keys
+
+0.02    15 Oct 2010
+    * avoid deadlocks in lock dir (key will be locked only once)
+    
 
 0.01    Date/time
         First version, released on an unsuspecting world.

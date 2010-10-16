@@ -73,6 +73,11 @@ sub lock_ex {
     $lock_key    =~ s{/}{_}g;
     my $lock_filename = File::Spec->catfile($self->lock_dir, $lock_key);
 
+    $self->_lock_dir_data->{$key}->{'counter'}++;
+    # return if already locked
+    return
+        if ($self->_lock_dir_data->{$key}->{'counter'} != 1);
+
     my $lock_fh;
     my $num_tries = 0;
     # try to exclusively open the lock the file, if it fails than wait until another process release the LOCK_EX
@@ -104,11 +109,20 @@ Release a lock.
 sub unlock {
     my $self = shift;
     my $key  = shift;
+    
+    if (not $self->_lock_dir_data->{$key}) {
+        warn 'unlock("'.$key.'") but is is not locked';
+        return;
+    };
 
-    # release+delete lock file
-    unlink delete $self->_lock_dir_data->{$key}->{'filename'};
-    close delete $self->_lock_dir_data->{$key}->{'fh'};
-    delete $self->_lock_dir_data->{$key};
+    $self->_lock_dir_data->{$key}->{'counter'}--;
+
+    if ($self->_lock_dir_data->{$key}->{'counter'} <= 0) {
+        # release+delete lock file
+        unlink delete $self->_lock_dir_data->{$key}->{'filename'};
+        close delete $self->_lock_dir_data->{$key}->{'fh'};
+        delete $self->_lock_dir_data->{$key};
+    }
 }
 
 sub DESTROY {
