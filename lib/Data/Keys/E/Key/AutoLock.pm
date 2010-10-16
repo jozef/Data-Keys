@@ -7,7 +7,7 @@ Data::Keys::E::Key::AutoLock - lock keys automatically
 =head1 DESCRIPTION
 
 Calls C<$self->lock_sh> before each C<get>, calls C<$self->lock_ex> before
-each C<set>. Afterterwards calls C<$self->unlock>.
+each C<set>. Afterwards calls C<$self->unlock>.
 
 =cut
 
