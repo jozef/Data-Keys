@@ -4,6 +4,7 @@ Revision history for Data::Keys
     * avoid deadlocks in lock dir (key will be locked only once)
     * pass all self+key+value to key adapt and (in|de)flate
     * allow deleting with uniq set
+    * added Key::AutoLock
 
 0.01    Date/time
         First version, released on an unsuspecting world.
