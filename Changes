@@ -1,5 +1,8 @@
 Revision history for Data::Keys
 
+0.03    9 October 2016
+    * fix test expecting english locale errors (#1, thanks Slaven Rezić for reporting)
+
 0.02    15 Oct 2010
     * avoid deadlocks in lock dir (key will be locked only once)
     * pass all self+key+value to key adapt and (in|de)flate

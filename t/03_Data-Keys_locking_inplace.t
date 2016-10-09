@@ -46,7 +46,7 @@ sub main {
 			exit;
 		}
 		close($lock_fh);
-		throws_ok { IO::Any->new([$tmp_folder, 'abcd'], '+>>', { LOCK_EX => 1, LOCK_NB => 1 }) } qr/unavailable/, 'file locked preventing LOCK_EX';
+		throws_ok { IO::Any->new([$tmp_folder, 'abcd'], '+>>', { LOCK_EX => 1, LOCK_NB => 1 }) } qr/flock failed/, 'file locked preventing LOCK_EX';
 		is($ts->set('abcd', 456), 'abcd', 'set (should be blocked)');
 		lives_ok { IO::Any->new([$tmp_folder, 'abcd'], '+>>', { LOCK_EX => 1, LOCK_NB => 1 }) } 'and unlocked';
 	}
@@ -60,7 +60,7 @@ sub main {
 			exit;
 		}
 		close($lock_fh);
-		throws_ok { IO::Any->new([$tmp_folder, 'abcdx'], '+>>', { LOCK_SH => 1, LOCK_NB => 1 }) } qr/unavailable/, 'file locked preventing LOCK_SH';;
+		throws_ok { IO::Any->new([$tmp_folder, 'abcdx'], '+>>', { LOCK_SH => 1, LOCK_NB => 1 }) } qr/flock failed/, 'file locked preventing LOCK_SH';;
 		is($ts->set('abcdx', 456), 'abcdx', 'set (should be blocked)');
 		lives_ok { IO::Any->new([$tmp_folder, 'abcdx'], '+>>', { LOCK_EX => 1, LOCK_NB => 1 }) } 'and unlocked';
 	}
