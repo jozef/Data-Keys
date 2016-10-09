@@ -33,3 +33,4 @@
 
 ^Data-Keys-.*
 ^MYMETA.yml$
+^MYMETA\.json$

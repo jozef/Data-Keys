@@ -37,7 +37,7 @@ L<Data::Keys::E::Store::Dir>, L<Data::Keys::E::Store::Mem>
 use warnings;
 use strict;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 use Moose;
 use Moose::Util;

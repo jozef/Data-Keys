@@ -14,7 +14,7 @@ implementing C<lock_sh>, C<lock_ex> and C<unlock>.
 use warnings;
 use strict;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 use Moose::Role;
 

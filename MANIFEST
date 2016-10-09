@@ -13,6 +13,7 @@ lib/Data/Keys/E/Store/Mem.pm
 lib/Data/Keys/E/UniqSet.pm
 lib/Data/Keys/E/Value/InfDef.pm
 MANIFEST			This list of files
+META.json
 META.yml
 README
 t/01_Data-Keys.t

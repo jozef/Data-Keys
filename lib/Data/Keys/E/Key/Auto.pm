@@ -14,7 +14,7 @@ with a value as an argument.
 use warnings;
 use strict;
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 use Moose::Role;
 use Digest::SHA1 'sha1_hex';
