@@ -25,7 +25,14 @@ sub main {
 	my $tmp_folder = tempdir( CLEANUP => 1 );
 
 	# unknown attrs
-	throws_ok { Data::Keys->new('base' => $tmp_folder, 'nonExisting' => 1) } qr/unknown attributes - nonExisting/, 'die on unknown attributes';
+	throws_ok {
+		Data::Keys->new(
+			'base_dir'    => $tmp_folder,
+			'extend_with' => ['Store::Dir'],
+			'nonExisting' => 1
+			);
+	}
+	qr/unknown attributes - nonExisting/, 'die on unknown attributes';
 
 	my $ts = Data::Keys->new(
 		'extend_with' => ['Store::Mem',],
