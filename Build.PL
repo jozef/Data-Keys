@@ -28,7 +28,6 @@ my $builder = Module::Build->new(
     ],
     add_to_cleanup => [ 'Data-Keys-*' ],
     create_readme  => 1,
-    sign           => 1,
     meta_merge => {
         resources => {
             repository => 'git://github.com/jozef/Data-Keys.git',

@@ -26,8 +26,6 @@ t/04_Data-Keys_uniqset.t
 t/05_Data-Keys_autofolders.t
 t/06_Data-Keys_autokey_keyadapt.t
 t/07_Data-Keys_autolock.t
-t/distribution.t
-t/fixme.t
-t/pod-coverage.t
-t/pod-spell.t
-t/pod.t
+xt/pod-coverage.t
+xt/pod-spell.t
+xt/pod.t
