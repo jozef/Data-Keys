@@ -5,6 +5,7 @@ use warnings;
 
 #use Test::More 'no_plan';
 use Test::More tests => 7;
+use Test::NoMalware;
 use Test::Differences;
 use Test::Exception;
 

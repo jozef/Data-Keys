@@ -13,6 +13,7 @@ my $builder = Module::Build->new(
         'Test::More'        => 0,
         'Test::Differences' => 0,
         'Test::Exception'   => 0,
+        'Test::NoMalware'   => 0,
         'File::Temp'        => 0,
         'JSON::Util'        => 0,
     },
