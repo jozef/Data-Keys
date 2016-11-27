@@ -1,5 +1,8 @@
 Revision history for Data::Keys
 
+0.04   27 November 2016
+    * skip testing on windows
+
 0.03    9 October 2016
     * fix test expecting english locale errors (#1, thanks Slaven Rezić for reporting)
     * fix unknown attributes test (#2, thanks Slaven Rezić for reporting)
